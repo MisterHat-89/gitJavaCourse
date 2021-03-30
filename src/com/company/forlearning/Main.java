@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         Lesson1 lesson1 = new Lesson1();
-        float resultTask1 = lesson1.task1(1, 1, 1, 1);
+        float resultTask1 = lesson1.task1(1, 4, 9, 7);
         boolean resultTask2 = lesson1.task2(15, 1);
         String resultTask3 = lesson1.task3(-7);
         String resultTask4 = lesson1.task4("Alexey");

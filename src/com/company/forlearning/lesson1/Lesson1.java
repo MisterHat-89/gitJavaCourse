@@ -7,7 +7,9 @@ public class Lesson1 {
     где a, b, c, d – целочисленные входные параметры этого метода;
     */
     public float task1(int a, int b, int c, int d) {
-        return a * (b + (c / d));
+        float e = (float) c;
+        float result = a * (b + (c / d));
+        return result;
     }
 
     /*
@@ -45,10 +47,9 @@ public class Lesson1 {
     работы метода в консоль
     */
     public String task5(int year) {
-        if (year % 400 == 0) return "Год " + year + " - високосный";
-        if (year % 100 == 0) return "Год " + year + " - високосный";
-        if (year % 4 == 0) return "Год " + year + " - високосный";
-
+        if ( year % 4 == 0 || year % 400 == 0) return "Год " + year + " - високосный";
+        if (year % 100 == 0) return "Год " + year + " - не високосный";
+        
         return "Год " + year + " - не високосный";
     }
 
