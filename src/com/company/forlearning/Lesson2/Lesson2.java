@@ -131,7 +131,7 @@ public class Lesson2 {
             default:
                 return "Введите правильные данные";
         }
-        return "В " + number + " байтах будет " + result + str;
+        return "В " + number + " битах будет " + result + str;
     }
 
 
