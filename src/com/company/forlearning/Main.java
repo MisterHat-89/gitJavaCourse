@@ -7,38 +7,46 @@ import com.company.forlearning.Lesson5.Bird;
 import com.company.forlearning.Lesson5.Cat;
 import com.company.forlearning.Lesson5.Dog;
 import com.company.forlearning.Lesson5.Horse;
+import com.company.forlearning.Lesson6.DarkHero;
+import com.company.forlearning.Lesson6.LightHero;
+
 
 public class Main {
 
-    public static float run;
-    public static float swim;
-    public static float jump;
-    public static Scanner scanner = new Scanner(System.in);
+    private static int round = 1;
 
-    public static void main(String[] args) {
-        Bird bird = new Bird();
-        Cat cat = new Cat();
-        Dog dog = new Dog();
-        Horse horse = new Horse();
+    public static void main(String[] args) throws InterruptedException {
+        LightHero lightHero = new LightHero("LightHero", 15, 100, 15);
+        DarkHero darkHero = new DarkHero("DarkHero", 10, 150, 5);
 
-        Animal[] animals = {
-                bird,
-                cat,
-                dog,
-                horse
-        };
+        while (!lightHero.isDead() || !darkHero.isDead()) {
+            System.out.println("**** Round " + round + " ****");
 
-        System.out.println("Введите дистанцию для бега >> ");
-        run = scanner.nextFloat();
-        System.out.println("Введите дистанцию для плавания >> ");
-        swim = scanner.nextFloat();
-        System.out.println("Введите высоту препятствия для прыжка >> ");
-        jump = scanner.nextFloat();
+            System.out.println(lightHero.getHeroInfo());
+            System.out.println(darkHero.getHeroInfo());
 
-        for (Animal animal : animals) {
-            System.out.println(animal.run(run));
-            System.out.println(animal.swim(swim));
-            System.out.println(animal.jump(jump));
+            lightHero.attack(darkHero);
+
+            if (darkHero.isDead()) {
+                System.out.println("lightHero win");
+                break;
+            }
+
+            darkHero.attack(lightHero);
+
+            if (lightHero.isDead()) {
+                System.out.println("darkHero win");
+                break;
+            }
+
+            lightHero.healSelf();
+            darkHero.healSelf();
+
+            System.out.println(lightHero.getHeroInfo());
+            System.out.println(darkHero.getHeroInfo());
+            round++;
+
+            Thread.sleep(1500);
         }
     }
 
