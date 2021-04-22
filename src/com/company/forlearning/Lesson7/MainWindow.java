@@ -38,7 +38,6 @@ public class MainWindow extends JFrame {
         settings = new Settings(this);
         gameMap = new GameMap();
 
-
         JButton btnStart = new JButton("Start game");
         btnStart.addActionListener(new ActionListener() {
             @Override
@@ -80,10 +79,7 @@ public class MainWindow extends JFrame {
     }
 
     void getUserSettingAndStartGame(int gameMode, int gameMapSizeX, int gameMapSizeY, int winLength) {
-        gameMap.removeAll();
         gameMap.startGame(gameMode, gameMapSizeX, gameMapSizeY, winLength);
-        gameMap.revalidate();
-        gameMap.repaint();
     }
 
 }

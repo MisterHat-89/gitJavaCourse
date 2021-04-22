@@ -6,6 +6,7 @@ package com.company.forlearning.Lesson7;
  */
 
 public class Game {
+
     public void game() {
         new MainWindow();
     }
