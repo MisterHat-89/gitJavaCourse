@@ -1,6 +1,15 @@
 package com.company.forlearning.lesson1;
 
+
+import okhttp3.OkHttpClient;
+
 public class Lesson1 {
+
+    public static void main (String[] args){
+
+        OkHttpClient okHttpClient = new OkHttpClient();
+
+    }
 
     /*
     Написать метод вычисляющий выражение a * (b + (c / d)) и возвращающий результат с плавающей точкой,
